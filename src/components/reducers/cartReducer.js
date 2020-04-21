@@ -9,24 +9,24 @@ import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING } from '
 
 const initState = {
     items: [
-        {id:1,title:'Skechers', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:110,img:Item1},
+        {id:1,title:'Skechers', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:30,img:Item1},
         {id:2,title:'Adidas', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:80,img: Item2},
-        {id:3,title:'Red Tape', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:120,img: Item3},
-        {id:4,title:'Fila', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:260,img:Item4},
-        {id:5,title:'Puma', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:160,img: Item5},
-        {id:6,title:'Nike', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item6}
+        {id:3,title:'Red Tape', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:40,img: Item3},
+        {id:4,title:'Fila', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:60,img:Item4},
+        {id:5,title:'Puma', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:20,img: Item5},
+        {id:6,title:'Nike', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:50,img: Item6}
     ],
     addedItems:[],
     total: 0
 
 }
-const cartReducer= (state = initState,action)=>{
+const cartReducer= (state = initState, action)=>{
    
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
           let addedItem = state.items.find(item=> item.id === action.id)
           //check if the action id exists in the addedItems
-         let existed_item= state.addedItems.find(item=> action.id === item.id)
+         let existed_item = state.addedItems.find(item => action.id === item.id)
          if(existed_item)
          {
             addedItem.quantity += 1 
